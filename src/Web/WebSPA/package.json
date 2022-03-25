@@ -24,7 +24,9 @@
     "build:dev:watch": "npm run build:dev && ng build --watch",
     "build:prod": "ng build --prod --aot --extract-css",
     "lint:sass": "sass-lint -c .sass-lint.yml Client/**/*.scss --verbose",
-    "lint:ts": "tslint -c tslint.json Client/**/*.ts"
+    "lint:ts": "tslint -c tslint.json Client/**/*.ts",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@angular/animations": "8.2.14",
@@ -53,7 +55,8 @@
     "rxjs": "~6.4.0",
     "rxjs-compat": "~6.4.0",
     "webpack-dev-server": "3.1.14",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.803.23",
@@ -89,5 +92,6 @@
     "typescript": "3.4.5",
     "url-loader": "1.1.1",
     "webpack": "^4.42.1"
-  }
+  },
+  "snyk": true
 }
